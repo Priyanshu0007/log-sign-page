@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Container} from "./components/Container.styled"
+import {StyledImage} from "./components/Image.styled"
+import {StyledForm} from "./components/Form.styled"
+import {H1Styled} from "./components/Title.styled"
+import {H2Styled} from "./components/SubTitle.styled"
+import {InputStyled} from "./components/Input.styled"
+import myImage from "../public/authentication.png"
+import {eyeOff} from 'react-icons-kit/feather/eyeOff';
+import {eye} from 'react-icons-kit/feather/eye'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
+  const handleToggle = () => {
+    if (type==='password'){
+       setIcon(eye);
+       setType('text')
+    } else {
+       setIcon(eyeOff)
+       setType('password')
+    }
+ } 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Container>
+      <StyledImage src={myImage}/>
+      <StyledForm>
+        <H1Styled>Login</H1Styled>
+        <H2Styled>LoginId</H2Styled>
+        <InputStyled type="text" id="fname" name="fname" placeholder="Enter Login ID"></InputStyled>
+        <H2Styled>Password</H2Styled>
+        <InputStyled type="password" id="pwd" name="pwd"/>
+        <span onClick={handleToggle}>
+          <img icon={icon} size={25}/>
+        </span>
+      </StyledForm>
+    </Container>
   )
 }
 
