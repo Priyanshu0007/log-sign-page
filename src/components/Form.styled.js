@@ -1,14 +1,12 @@
 import styled from "styled-components"
 export const StyledForm =styled.div`
-    width:100%;
+    width:80%;
+    display:flex;
+    flex-direction:column;
     span{
         display: flex;
         align-items: center;
-        justify-content: center;
-        img{
-            postion:absolute;
-            margin-right:10rem;
-        }
+        justify-content: flex-end;
     }
     @media only screen and (max-width: 600px) {
         width:80%;
