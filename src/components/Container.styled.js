@@ -29,4 +29,8 @@ export const Container=styled.div`
         text-align: right;
         color: #F78719;
     }
+    @media only screen and (max-width: 600px) {
+        label{font-size:15px;}
+        a{font-size:15px;}
+    }
 `

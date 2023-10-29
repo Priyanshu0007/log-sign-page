@@ -46,6 +46,7 @@ function App() {
         <label >Agree to <a href="#">Terms & Conditions</a></label>
         </div>
         <ButtonStyled>Login</ButtonStyled>
+        <p>Don’t have an account? <a>Register Here</a></p>
       </StyledForm>
     </Container>
   )

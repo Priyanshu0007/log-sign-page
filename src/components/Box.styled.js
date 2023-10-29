@@ -2,7 +2,8 @@ import styled from "styled-components";
 export const Box=styled.div`
     display:flex;
     justify-content:space-between;
-    padding-bottom:20px;
+    padding-bottom:10px;
+    padding-top:10px;
     label{
         font-family: Poppins;
         font-size: 18px;
@@ -21,5 +22,9 @@ export const Box=styled.div`
         text-align: right;
         color: #F78719;
         text-decoration: none;
+    }
+    @media only screen and (max-width: 600px) {
+        label{font-size:15px;}
+        a{font-size:15px;}
     }
 `
